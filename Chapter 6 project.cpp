@@ -1,7 +1,7 @@
 // Thomas Cubstead
 // 12/11/24
 // chapter_6_Project
-// Main
+// 1_Rectangle_Properties
 
 
 #include <iostream>
