@@ -2,6 +2,7 @@
 // 12/11/24
 // chapter_6_Project
 // 1_Rectangle_Properties
+// This program takes user input of length and width of a rectangle and displays the area and perimeter then loops until the user ends the program
 
 
 #include <iostream>
