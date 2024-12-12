@@ -1,5 +1,8 @@
-// Chapter 6 project.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Thomas Cubstead
+// 12/11/24
+// chapter_6_Project
+// Main
+
 
 #include <iostream>
 
