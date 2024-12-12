@@ -1,7 +1,7 @@
 // Thomas Cubstead
 // 12/11/24
 // chapter_6_Project
-// 1_Rectangle_Properties
+// 2_Safest_Driving_Area
 
 
 #include <iostream>
