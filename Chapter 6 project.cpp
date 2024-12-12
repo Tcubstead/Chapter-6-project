@@ -1,7 +1,8 @@
 // Thomas Cubstead
 // 12/11/24
 // chapter_6_Project
-// 4_Star_Search
+// 5_Paint_Job_Estimator
+// This program will take user input and display the cost of labor for painting a given room
 
 
 #include <iostream>
