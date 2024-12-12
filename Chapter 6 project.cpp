@@ -2,6 +2,7 @@
 // 12/11/24
 // chapter_6_Project
 // 2_Safest_Driving_Area
+// This program determines which region of a city has the most car crashes based on user input
 
 
 #include <iostream>
