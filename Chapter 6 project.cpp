@@ -2,6 +2,7 @@
 // 12/11/24
 // chapter_6_Project
 // 3_Celcius_Temp_Table
+// this program shows the temperature conversions between 0-20 degrees for farenheit and celcius
 
 
 #include <iostream>
