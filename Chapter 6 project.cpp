@@ -6,10 +6,47 @@
 
 
 #include <iostream>
+#include <string>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+//function to locate region with the safest driving history based on accidents
+void safestDrivingRegion(int accidents[], string regions[], int size) {
+    //variables for number of accidents and regions
+    int lowestAccidentHistory = accidents[0];
+    string regionWithLeast = regions[0];
+
+    //loop to sort through info and find which region had the least accidnets
+    for (int i = 1; i < size; ++i) {
+        if (accidents[i] < lowestAccidentHistory) {
+            lowestAccidentHistory = accidents[i];
+            regionWithLeast = regions[i];
+        }
+    }
+    //display results of safest region
+    cout << "The region with the safest drivers in the last year is: " 
+        << regionWithLeast << " which has had " << lowestAccidentHistory 
+        << " automobile accidents in the last year." << endl;
+}
+
+int main() {
+    //define regions
+    string regions[5] = {"North", "South", "East", "West", "central"};
+
+    int accidents[5];
+
+    //user input for the accidents in each region
+    for (int i = 0; i < 5; ++i) {
+        do {
+            cout << "enter the number of accidents in the " << regions[i] << " within the last year" << endl;
+            cin >> accidents[i];
+
+            if (accidents[i] < 0) {
+                cout << "error accidents can not be less than 0" << endl;
+            }
+        } while (accidents[i] < 0);
+    }
+    safestDrivingRegion(accidents, regions, 5);
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
