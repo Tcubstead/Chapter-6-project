@@ -2,6 +2,7 @@
 // 12/11/24
 // chapter_6_Project
 // 4_Star_Search
+// this program takes an average of judge scores after dropping highest and lowest to determine the final score
 
 
 #include <iostream>
