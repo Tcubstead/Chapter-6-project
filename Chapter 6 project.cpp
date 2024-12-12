@@ -10,6 +10,7 @@
 #include <algorithm>
 using namespace std;
 
+//sorts the scores by size and drops the highest and lowest before averaging results
 double finalScoreCalc(vector<double>& scores) {
 	sort(scores.begin(), scores.end());
 
@@ -28,10 +29,12 @@ int main() {
 
 	cout << "Enter the scores of the 5 judges (0 to 10): " << endl;
 
+	//user input of judge's scores
 	for (int i = 0; i < 5; i++) {
 		bool validScore = false;
 		cout << "judge " << i + 1 << ": ";
 		cin >> scores[i];
+		//makes sure scores are between 0-10
 		if (scores[i] >= 0 && scores[i] <= 10) {
 			validScore = true;
 		}else{
@@ -41,6 +44,7 @@ int main() {
 	}
 	double scoreTotal = finalScoreCalc(scores);
 
+	//display results
 	cout << "The score's final total is: " << scoreTotal << endl;
 	return 0;
 }
