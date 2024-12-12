@@ -17,7 +17,7 @@ double conversion(int farenheit) {
 //function for the conversion table
 void displayTable() {
     cout << "Farenheit/Celcius" << endl;
-    cout << "----------------------" << endl;
+    cout << "______________________" << endl;
 
     for (int farenheit = 0; farenheit <= 20; ++farenheit) {
         double celcius = conversion(farenheit);
