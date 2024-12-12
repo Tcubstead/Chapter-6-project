@@ -6,10 +6,43 @@
 
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+double finalScoreCalc(vector<double>& scores) {
+	sort(scores.begin(), scores.end());
+
+	scores.erase(scores.begin());
+	scores.pop_back();
+
+	double sum = 0;
+	for (double score : scores) {
+		sum += score;
+	}
+	return sum / scores.size();
+}
+
+int main() {
+	vector<double> scores(5);
+
+	cout << "Enter the scores of the 5 judges (0 to 10): " << endl;
+
+	for (int i = 0; i < 5; i++) {
+		bool validScore = false;
+		cout << "judge " << i + 1 << ": ";
+		cin >> scores[i];
+		if (scores[i] >= 0 && scores[i] <= 10) {
+			validScore = true;
+		}else{
+			cout << "score is invalid make sure the score is between 0 and 10" << endl;
+			i--;
+		}
+	}
+	double scoreTotal = finalScoreCalc(scores);
+
+	cout << "The score's final total is: " << scoreTotal << endl;
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
