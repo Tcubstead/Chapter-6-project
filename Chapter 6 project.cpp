@@ -6,10 +6,30 @@
 
 
 #include <iostream>
+#include <iomanip>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+//conversion from farenheit to celcius
+double conversion(int farenheit) {
+    return 5.0 / 9.0 * (farenheit - 32);
+}
+
+//function for the conversion table
+void displayTable() {
+    cout << "Farenheit/Celcius" << endl;
+    cout << "----------------------" << endl;
+
+    for (int farenheit = 0; farenheit <= 20; ++farenheit) {
+        double celcius = conversion(farenheit);
+        cout << farenheit << "\t\t" << fixed << setprecision(2) << celcius << endl;
+    }
+}
+
+//displays table
+int main() {
+    displayTable();
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
