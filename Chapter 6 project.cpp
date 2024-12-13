@@ -6,10 +6,60 @@
 
 
 #include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+//claculations for all prices and square footage
+
+double gallonCalc(double totalSquareFeet) {
+    return ceil(totalSquareFeet / 110.0);
+}
+
+double laborHoursCalc(double totalSquareFeet) {
+    return totalSquareFeet / 110.0 * 8;
+}
+
+double paintPriceCalc(double gallons, double gallonPrice) {
+    return gallons * gallonPrice;
+}
+
+double laborCostCalc(double hours) {
+    return hours * 25;
+}
+
+double totCost(double paintPrice, double laborCost) {
+    return paintPrice + laborCost;
+}
+
+//user input for square footage and a check to make sure its positive
+int main() {
+    int roomTot;
+    double gallonPrice;
+
+    do {
+        cout << "enter the amount of rooms";
+        cin >> roomTot;
+        if (roomTot < 1) {
+            cout << "error, rooms must be 1 or more \n";
+        }
+    } while (roomTot < 1);
+
+    vector<double> squareFootage(roomTot);
+
+    double squareFootageTot = 0;
+    for (int i = 0; i < roomTot; i++) {
+        do {
+            cout << "Enter the total square footage of the room " << i + 1 << ": ";
+            cin >> squareFootage[i];
+            if (squareFootage[i] < 0) {
+                cout << "square footage must be positive\n";
+            }
+        } while (squareFootage[i] < 0);
+        squareFootageTot += squareFootage[i];
+    }
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
