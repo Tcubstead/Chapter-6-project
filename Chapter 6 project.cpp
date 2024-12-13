@@ -39,7 +39,7 @@ int main() {
     
     //user input of room total
     do {
-        cout << "enter the amount of rooms";
+        cout << "enter the amount of rooms: ";
         cin >> roomTot;
         if (roomTot < 1) {
             cout << "error, rooms must be 1 or more \n";
