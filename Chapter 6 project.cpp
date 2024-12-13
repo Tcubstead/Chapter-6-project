@@ -45,6 +45,14 @@ int main() {
         }
     } while (roomTot < 1);
 
+    do {
+        cout << "enter the price of the paint used ($10 or greater per gallon): ";
+        cin >> gallonPrice;
+        if (gallonPrice < 10.00) {
+            cout << "value must be $10.00 or more\n";
+        }
+    } while (gallonPrice < 10.00);
+
     vector<double> squareFootage(roomTot);
 
     double squareFootageTot = 0;
@@ -59,7 +67,20 @@ int main() {
         squareFootageTot += squareFootage[i];
     }
 
+    double neededGallons = gallonCalc(squareFootageTot);
+    double requiredLabor = laborHoursCalc(squareFootageTot);
+    double paintPrice = paintPriceCalc(neededGallons, gallonPrice);
+    double laborCost = laborCostCalc(requiredLabor);
+    double totalCost = totCost(paintPrice, laborCost);
 
+    cout << "\nJob Details:" << endl;
+    cout << "amount of paint needed in gallons: " << neededGallons << endl;
+    cout << "amount of labor hours: " << requiredLabor << endl;
+    cout << "cost of Paint: $" << paintPrice << endl;
+    cout << "cost of labor: $" << laborCost << endl;
+    cout << "grand total cost: $" << totalCost << endl;
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
