@@ -36,7 +36,8 @@ double totCost(double paintPrice, double laborCost) {
 int main() {
     int roomTot;
     double gallonPrice;
-
+    
+    //user input of room total
     do {
         cout << "enter the amount of rooms";
         cin >> roomTot;
@@ -45,9 +46,11 @@ int main() {
         }
     } while (roomTot < 1);
 
+    //user input of paint prices
     do {
         cout << "enter the price of the paint used ($10 or greater per gallon): ";
         cin >> gallonPrice;
+        //checks that price is $10 or more
         if (gallonPrice < 10.00) {
             cout << "value must be $10.00 or more\n";
         }
@@ -55,6 +58,7 @@ int main() {
 
     vector<double> squareFootage(roomTot);
 
+    //user input for the square footage of each room
     double squareFootageTot = 0;
     for (int i = 0; i < roomTot; i++) {
         do {
@@ -67,12 +71,14 @@ int main() {
         squareFootageTot += squareFootage[i];
     }
 
+    //calls calculations using user inputs 
     double neededGallons = gallonCalc(squareFootageTot);
     double requiredLabor = laborHoursCalc(squareFootageTot);
     double paintPrice = paintPriceCalc(neededGallons, gallonPrice);
     double laborCost = laborCostCalc(requiredLabor);
     double totalCost = totCost(paintPrice, laborCost);
 
+    //display results
     cout << "\nJob Details:" << endl;
     cout << "amount of paint needed in gallons: " << neededGallons << endl;
     cout << "amount of labor hours: " << requiredLabor << endl;
